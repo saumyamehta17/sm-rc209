@@ -43,13 +43,31 @@ rake db:migrate
 changes in session/new.html.erb #see
 changes in registration/new.html.erb #see
 change in devise.rb             #see
+
+imp:
+yet username is not permitted one so overwrite permitted ones in registration-controller with application controller code   #see
 ```
 now allow create only if user is logged in
 ```
 articles controller
 before_filter :authenticate_user! , except: [:index, :show]
 ```
+Want to change password
+```
+changes in devise.rb
+```
+
 Rails server
 ```
 rails s
+```
+
+Errors
+```
+undefined method `registration_path' for # rails
+Sol : Restart server
+If login fail with username
+Sol Try to restart server
+Unpermitted attr
+see application controller
 ```
