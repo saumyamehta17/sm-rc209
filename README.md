@@ -53,4 +53,3 @@ Rails server
 ```
 rails s
 ```
-
