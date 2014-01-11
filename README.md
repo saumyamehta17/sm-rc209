@@ -1,5 +1,5 @@
-Railscast sm-rc209 and 210
-==========================
+Railscast sm-rc209 and 210 and 214
+====================================
 
 sm-rc209
 --------------------------
@@ -70,4 +70,16 @@ If login fail with username
 Sol Try to restart server
 Unpermitted attr
 see application controller
+```
+
+SM_RC214
+-------------------------
+A_B Testing or A_Bingo testing
+```
+is a way to test changes to your webpage design, before actually implementing to code. so that to check which one produce positive results.
+For eg - if making a button Red(1 variation)  and one is original (2 - in Gray). And we see between these variations which one produce more clicks that will ein.
+```
+Note:
+```
+this is deprciated in rails 4, no updates is introduced for 2 years.
 ```
