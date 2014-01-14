@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user! , except: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  respond_to :html
   # GET /articles
   # GET /articles.json
   def index
@@ -26,30 +26,19 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-
-    respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @article }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        flash[:notice] = "Article was successfully created"
       end
-    end
+    respond_with(@article)
   end
 
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        flash[:notice] = "Article was successfully updated"
       end
-    end
+      respond_with(@article, location: articles_path)
   end
 
   # DELETE /articles/1

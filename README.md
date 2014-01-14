@@ -1,5 +1,5 @@
-Railscast sm-rc209 and 210 and 214
-====================================
+Railscast sm-rc209 and 210 and 214 and 224
+==========================================
 
 sm-rc209
 --------------------------
@@ -82,4 +82,19 @@ For eg - if making a button Red(1 variation)  and one is original (2 - in Gray).
 Note:
 ```
 this is deprciated in rails 4, no updates is introduced for 2 years.
+```
+sm-rc224
+--------------------
+replace respond_to long code with
+```
+replace_with
+see articles controller for action create and update
+```
+Need to specfiy format first
+```
+respond_to :xml, :html
+```
+use location if want to go another path instead of default
+```
+see articles controller
 ```
